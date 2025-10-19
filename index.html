@@ -1,0 +1,240 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+export default function Portfolio() {
+  const projects = [
+    {
+      title: "Big Data — Enterprise Data Migration",
+      desc:
+        "FastAPI pipeline for migrating 750K+ records from Snowflake to Oracle using Celery, Redis, and AWS SQS with auto-schema creation and chunked inserts.",
+      tech: ["Python", "FastAPI", "Snowflake", "Oracle", "Docker", "AWS SQS", "CI/CD"],
+    },
+    {
+      title: "Algo Trading Engine",
+      desc:
+        "Python and GoLang-based AngelOne trading engine supporting real-time execution, multiprocessing, encrypted tokens, and shell-level deployments.",
+      tech: ["Python", "GoLang", "MySQL", "JWT", "SSO", "Shell"],
+    },
+    {
+      title: "MCP Server",
+      desc:
+        "FastAPI real-time server with WebSockets, JWT auth, RBAC, and React.js dashboard for monitoring multiple clients concurrently.",
+      tech: ["FastAPI", "React.js", "WebSockets", "JWT", "RBAC", "MySQL"],
+    },
+    {
+      title: "MenuMitra",
+      desc:
+        "Developed scalable POS APIs and dashboards using Django, FastAPI, React.js, Docker, and CI/CD automation on AWS.",
+      tech: ["Django", "FastAPI", "React.js", "Docker", "AWS"],
+    },
+    {
+      title: "Autoprofito",
+      desc:
+        "Real-time trading system with Django + FastAPI backend, React.js frontend, and AWS integration for live data handling and storage.",
+      tech: ["Django", "FastAPI", "React.js", "MySQL", "AWS", "OAuth"],
+    },
+  ];
+
+  const experiences = [
+    {
+      company: "Caresoft Global Pvt. Ltd.",
+      role: "Software Engineer",
+      period: "Apr 2024 — Present",
+      bullets: [
+        "Designing and developing scalable backend APIs using Django and FastAPI.",
+        "Working on data engineering and integration with multiple industrial applications.",
+        "Collaborating with cross-functional teams to deliver high-quality enterprise systems.",
+        "Implementing CI/CD pipelines with Jenkins and GitHub Actions for automation.",
+      ],
+    },
+    {
+      company: "Shekru Labs India Pvt. Ltd.",
+      role: "Software Engineer",
+      period: "Jun 2022 — Apr 2024",
+      bullets: [
+        "Architected and delivered two high-performance platforms end-to-end.",
+        "Developed AutoProfito and StockSync trading systems using Django, FastAPI, and multiprocessing.",
+        "Implemented broker integrations, WebSocket engines, and optimized data pipelines in MySQL & PL/SQL.",
+        "Handled DevOps using Docker, Nginx, and GitHub Actions CI/CD.",
+        "Led frontend development with React.js and Tailwind CSS for responsive dashboards.",
+        "Earned Employee of the Month for backend excellence.",
+      ],
+    },
+    {
+      company: "Accurate Industrial Controls Pvt. Ltd.",
+      role: "Design Engineer",
+      period: "Jun 2021 — Apr 2022",
+      bullets: [
+        "Designed electrical schematics and optimized SMPS systems.",
+        "Collaborated across teams to enhance performance and manufacturability.",
+      ],
+    },
+  ];
+
+  const certifications = [
+    "GUVI Certification for Python",
+    "Great Learning Certification for Linux",
+    "Great Learning Certification for Jira Project Management",
+  ];
+
+  const skills = [
+    "Python", "GoLang", "React.js", "Django", "FastAPI", "Flask", "SQLAlchemy", "Redis OM", "Docker", "Kubernetes", "AWS EC2", "AWS Lambda", "AWS RDS", "Snowflake", "Kafka", "RabbitMQ", "MySQL", "PostgreSQL", "Oracle", "MongoDB", "GitHub Actions", "Jenkins", "GitLab CI", "Bootstrap 5", "Tailwind CSS"
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-black text-slate-100 font-sans">
+      {/* HEADER */}
+      <motion.header
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="sticky top-0 z-50 backdrop-blur bg-black/40 border-b border-white/5"
+      >
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-500 to-pink-500 flex items-center justify-center shadow-lg text-black font-bold">
+              NC
+            </div>
+            <div>
+              <div className="text-sm font-semibold">Nagesh Chavan</div>
+              <div className="text-xs text-slate-400">Software Engineer • Python Full Stack</div>
+            </div>
+          </div>
+          <nav className="hidden md:flex gap-6 text-sm text-slate-300">
+            <a href="#about" className="hover:text-white transition">About</a>
+            <a href="#experience" className="hover:text-white transition">Experience</a>
+            <a href="#projects" className="hover:text-white transition">Projects</a>
+            <a href="#skills" className="hover:text-white transition">Skills</a>
+            <a href="#contact" className="hover:text-white transition">Contact</a>
+            <a
+              href="/resume.pdf"
+              className="ml-2 inline-flex items-center px-3 py-1.5 rounded-lg bg-gradient-to-r from-indigo-600 to-pink-600 text-black font-medium"
+            >
+              Download Resume
+            </a>
+          </nav>
+        </div>
+      </motion.header>
+
+      {/* HERO */}
+      <main className="max-w-6xl mx-auto px-6 py-12">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+              Hi, I’m <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400">Nagesh Chavan</span>
+            </h1>
+            <p className="mt-4 text-lg text-slate-300 max-w-xl">
+              Software Engineer with <strong>4.4+ years</strong> of experience in Python Full Stack development. Currently working at <strong>Caresoft Global Pvt. Ltd.</strong> Building scalable trading systems, data migration pipelines, and production-grade enterprise software.
+            </p>
+
+            <div className="mt-6 flex gap-3">
+              <a href="#projects" className="inline-flex items-center px-5 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 transition font-medium">Explore Projects</a>
+              <a href="#contact" className="inline-flex items-center px-5 py-3 rounded-lg border border-white/10 text-slate-200 hover:bg-white/5 transition">Get in touch</a>
+            </div>
+
+            <div className="mt-8 grid grid-cols-2 gap-3 text-sm text-slate-400">
+              <div>
+                <div className="text-xs uppercase text-slate-500">Location</div>
+                <div>Pune, Maharashtra</div>
+              </div>
+              <div>
+                <div className="text-xs uppercase text-slate-500">Experience</div>
+                <div>4.4+ Years</div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ x: 60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }} className="relative">
+            <div className="rounded-2xl p-6 bg-gradient-to-b from-white/3 to-white/2 border border-white/5 shadow-2xl">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-xs text-slate-400">Role</div>
+                  <div className="font-semibold">Software Engineer</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-slate-400">Experience</div>
+                  <div className="font-semibold">4.4+ Years</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* EXPERIENCE SECTION */}
+        <section id="experience" className="mt-16">
+          <motion.h2 className="text-2xl font-bold">Experience</motion.h2>
+          <div className="mt-6 space-y-6">
+            {experiences.map((exp, i) => (
+              <motion.div key={i} whileHover={{ scale: 1.02 }} className="p-4 rounded-2xl bg-gradient-to-b from-white/3 to-white/2 border border-white/5">
+                <div className="flex justify-between">
+                  <div>
+                    <div className="text-lg font-semibold">{exp.company}</div>
+                    <div className="text-sm text-slate-400">{exp.role}</div>
+                  </div>
+                  <div className="text-sm text-slate-500">{exp.period}</div>
+                </div>
+                <ul className="mt-3 text-slate-300 list-disc list-inside">
+                  {exp.bullets.map((b, idx) => <li key={idx}>{b}</li>)}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* PROJECTS SECTION */}
+        <section id="projects" className="mt-16">
+          <motion.h2 className="text-2xl font-bold">Projects</motion.h2>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {projects.map((p, i) => (
+              <motion.div key={i} whileHover={{ y: -8 }} className="p-4 rounded-2xl bg-gradient-to-b from-white/3 to-white/2 border border-white/5">
+                <div className="text-lg font-semibold">{p.title}</div>
+                <div className="text-sm text-slate-400 mt-1">{p.desc}</div>
+                <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-300">
+                  {p.tech.map((t) => (
+                    <span key={t} className="px-2 py-1 rounded bg-white/5">{t}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* SKILLS SECTION */}
+        <section id="skills" className="mt-16">
+          <motion.h2 className="text-2xl font-bold">Skills</motion.h2>
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-4">
+            {skills.map((s) => (
+              <motion.div whileHover={{ scale: 1.05 }} key={s} className="p-3 rounded-xl bg-white/3 text-center">
+                <div className="text-sm font-semibold">{s}</div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* CERTIFICATIONS SECTION */}
+        <section id="certifications" className="mt-16">
+          <motion.h2 className="text-2xl font-bold">Certifications</motion.h2>
+          <ul className="mt-4 space-y-2 text-slate-300 list-disc list-inside">
+            {certifications.map((c, i) => <li key={i}>{c}</li>)}
+          </ul>
+        </section>
+
+        {/* CONTACT SECTION */}
+        <section id="contact" className="mt-16">
+          <motion.h2 className="text-2xl font-bold">Contact</motion.h2>
+          <div className="mt-4 text-slate-300">
+            <p>Email: nageshchavan0802@gmail.com</p>
+            <p>Phone: +91 9834187607</p>
+            <p>Location: Pune, Maharashtra</p>
+          </div>
+        </section>
+
+        <footer className="mt-20 pb-12 text-center text-sm text-slate-500">
+          <div>© {new Date().getFullYear()} Nagesh Chavan — Software Engineer | Built with React, Tailwind & Framer Motion</div>
+        </footer>
+      </main>
+    </div>
+  );
+}
